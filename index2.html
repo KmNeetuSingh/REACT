@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>JSX and Babel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
 </head>
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    // Simple JSX Element
-    const element = <p>Seize the day</p>;
-    ReactDOM.render(element, document.getElementById('root'));
-    // Dynamic Content in JSX
-    const text = "Seize the day";
-    const element = <p>{text}</p>;
-    ReactDOM.render(element, document.getElementById('root'));
+
+    function ItemList({ items }) {
+      return (
+        <ul>
+          {items.length === 0 ? (
+            <li>No items found</li>
+          ) : (
+            items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))
+          )}
+        </ul>
+      );
+    }
+
+
+    const App = () => {
+      const items1 = ["Apple", "Banana", "Cherry"];
+      const items2 = [];
+
+      return (
+        <div>
+          <h1>Dynamic List Rendering</h1>
+          <h2>List with items</h2>
+          <ItemList items={items1} />
+          <h2>List without items</h2>
+          <ItemList items={items2} />
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById('root'));
   </script>
 </body>
 </html>
