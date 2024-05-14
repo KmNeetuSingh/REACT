@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const App = () => {
+      const [hobbies, setHobbies] = React.useState([""]);
+
+      const handleInputChange = (index, event) => {
+        const newHobbies = [...hobbies];
+        newHobbies[index] = event.target.value;
+        setHobbies(newHobbies);
+      };
+
+      const handleAddInput = () => {
+        setHobbies([...hobbies, ""]);
+      };
+
+      const handleRemoveInput = (index) => {
+        const newHobbies = [...hobbies];
+        newHobbies.splice(index, 1);
+        setHobbies(newHobbies);
+      };
+
+      const handleSubmit = () => {
+        console.log("Hobbies:", hobbies);
+      };
+
+      return (
+        <form onSubmit={handleSubmit}>
+          {hobbies.map((hobby, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                value={hobby}
+                onChange={(event) => handleInputChange(index, event)}
+              />
+              {index === 0 ? (
+                <button type="button" onClick={handleAddInput}>Add Hobbies</button>
+              ) : (
+                <button type="button" onClick={() => handleRemoveInput(index)}>Remove</button>
+              )}
+            </div>
+          ))}
+          <button type="submit">Submit</button>
+        </form>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+</html>
