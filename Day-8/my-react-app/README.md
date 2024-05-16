@@ -68,3 +68,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In this time i will learn how to create a react app like an productionn level and i have to create this thing in my own .i alos face some difficullities and aloslearn todaty how we push code in github .Overall it's a good thing to  build all the thing together in this assignment I jsut simply creata an counter  its basic simple to create a counter....
