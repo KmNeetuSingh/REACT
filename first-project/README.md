@@ -15,7 +15,11 @@ The development server provided by Vite offered hot module replacement, which gr
 I appreciated Vite's support for modern JavaScript features, such as ES modules, which allowed me to write modular code and leverage the latest language features. Additionally, Vite's seamless integration with popular frontend frameworks like React, Vue.js, and others, ensured compatibility with my preferred tools and libraries, further streamlining my development process.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Overall, my experience with Vite was positive, as it empowered me to create a high-quality project efficiently and effectively. Its speed, simplicity, and compatibility make it an excellent choice for modern web development projects, especially for aspiring developers seeking to build applications quickly and easily.
+=======
+Overall, my experience with Vite was positive, as it empowered me to create a high-quality project efficiently and effectively. Its speed, simplicity, and compatibility make it an excellent choice for modern web development projects, especially for aspiring developers seeking to build applications quickly and easily.
+>>>>>>> 5c265c24009be679da6cd1fe63f4163fc10889fb
 =======
 Overall, my experience with Vite was positive, as it empowered me to create a high-quality project efficiently and effectively. Its speed, simplicity, and compatibility make it an excellent choice for modern web development projects, especially for aspiring developers seeking to build applications quickly and easily.
 >>>>>>> 5c265c24009be679da6cd1fe63f4163fc10889fb
