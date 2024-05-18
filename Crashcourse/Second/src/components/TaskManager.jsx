@@ -1,5 +1,3 @@
-// src/components/TaskManager.jsx
-
 import { useState } from "react";
 
 function TaskManager() {
@@ -13,7 +11,7 @@ function TaskManager() {
     }
   };
 
-  const removeTask = () => {
+  const removeFirstTask = () => {
     setTasks(tasks.slice(1));
   };
 
@@ -25,13 +23,7 @@ function TaskManager() {
         onChange={(e) => setTask(e.target.value)}
       />
       <button onClick={addTask}>Add Task</button>
-      <button
-        onClick={() => {
-          /*complete the missing code*/
-        }}
-      >
-        Remove First Task
-      </button>
+      <button onClick={removeFirstTask}>Remove First Task</button>
       <ul>
         {tasks.map((task, index) => (
           <li key={index}>{task}</li>

@@ -9,16 +9,14 @@ function ScoreKeeper() {
     <div>
       <p>Score: {score}</p>
       <button
-        onClick={() => {
-          /* complete the missing code */
-        }}
+        onClick={() => { setScore(score + 1) }
+        }
       >
         Increase by 5
       </button>
       <button
-        onClick={() => {
-          /* complete the missing code */
-        }}
+        onClick={() => 
+          setScore(score-5)}
       >
         Decrease by 5
       </button>

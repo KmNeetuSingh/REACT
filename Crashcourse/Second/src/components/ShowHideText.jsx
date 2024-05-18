@@ -1,5 +1,3 @@
-// src/components/ShowHideText.jsx
-
 import { useState } from "react";
 
 function ShowHideText() {
@@ -9,7 +7,7 @@ function ShowHideText() {
     <div>
       <button
         onClick={() => {
-          /* complete the missing code */
+          setShowText(prevShowText => !prevShowText);
         }}
       >
         Show/Hide Text
