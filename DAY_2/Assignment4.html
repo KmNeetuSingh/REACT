@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Here I create a component 
+    const TodoList = () => {
+      // State for managing todo items and their completion status
+      const [todos, setTodos] = React.useState([]);
+      const [filter, setFilter] = React.useState('all');
+
+      // Function 
+      const addTodo = (text) => {
+        setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
+      };
+
+      // Function to toggle the completion status of a todo item
+      const toggleTodo = (id) => {
+        setTodos(todos.map(todo =>
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        ));
+      };
+
+      // Function to remove a todo item
+      const removeTodo = (id) => {
+        setTodos(todos.filter(todo => todo.id !== id));
+      };
+
+      // Function to filter todo items based on completion status
+      const filterTodos = (status) => {
+        setFilter(status);
+      };
+
+      // Render todo items based on the selected filter
+      const filteredTodos = filter === 'all' ? todos :
+                            filter === 'active' ? todos.filter(todo => !todo.completed) :
+                            todos.filter(todo => todo.completed);
+
+      return (
+        <div>
+          {/* Todo input form */}
+          <form onSubmit={(e) => { e.preventDefault(); addTodo(e.target.todo.value); e.target.todo.value = ''; }}>
+            <input type="text" name="todo" placeholder="Add new todo" />
+            <button type="submit">Add</button>
+          </form>
+
+          {/* Todo list */}
+          <ul>
+            {filteredTodos.map(todo => (
+              <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                <input type="checkbox" checked={todo.completed} onChange={() => toggleTodo(todo.id)} />
+                {todo.text}
+                <button onClick={() => removeTodo(todo.id)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+
+          {/* Filter buttons */}
+          <div>
+            <button onClick={() => filterTodos('all')}>All</button>
+            <button onClick={() => filterTodos('active')}>Active</button>
+            <button onClick={() => filterTodos('completed')}>Completed</button>
+          </div>
+        </div>
+      );
+    };
+
+    // Here I rendering ........
+    ReactDOM.render(<TodoList />, document.getElementById('root'));
+  </script>
+</body>
+</html>
