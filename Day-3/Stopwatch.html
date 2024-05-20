@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .timer {
+        font-size: 48px;
+        color: #333;
+    }
+    
+    .buttons-container {
+        display: flex;
+    }
+
+    .button {
+        background-color: #4285f4;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #3367d6;
+    }
+</style>
+</head>
+<body>
+    <div id="timer" class="timer">0 m 0 s 00</div>
+    <div class="buttons-container">
+        <button id="startStopButton" class="button" onclick="startStopTimer()">Start</button>
+        <button id="resetButton" class="button" onclick="resetTimer()">Reset</button>
+    </div>
+
+    <script>
+        let timerInterval;
+        let milliseconds = 0;
+        let seconds = 0;
+        let minutes = 0;
+        let display = document.getElementById('timer');
+        let isTimerRunning = false;
+
+        function startStopTimer() {
+            if (isTimerRunning) {
+                clearInterval(timerInterval);
+                document.getElementById('startStopButton').textContent = 'Start';
+                isTimerRunning = false;
+                timerInterval = setInterval(updateTimer, 1000);           } else {
+                timerInterval = setInterval(updateTimer, 100); 
+                document.getElementById('startStopButton').textContent = 'Stop';
+                isTimerRunning = true;
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            milliseconds = 0;
+            seconds = 0;
+            minutes = 0;
+            display.textContent = formatTime(minutes) + ' m ' + formatTime(seconds) + ' s ' + formatMilliseconds(milliseconds);
+            document.getElementById('startStopButton').textContent = 'Start';
+            isTimerRunning = false;
+            timerInterval = setInterval(updateTimer, 1000); 
+        }
+
+        function updateTimer() {
+            milliseconds++;
+            if (milliseconds === 59) {
+                milliseconds = 0;
+                seconds++;
+            }
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+            }
+            display.textContent = formatTime(minutes) + ' m ' + formatTime(seconds) + ' s ' + formatMilliseconds(milliseconds);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+
+        function formatMilliseconds(milliseconds) {
+            return milliseconds < 10 ? '0' + milliseconds : milliseconds;
+        }
+    </script>
+</body>
+</html>

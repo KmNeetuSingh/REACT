@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Template</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script>
+    // Task: Create a React Element
+    const element = React.createElement("p", null, "Seize the day");
+
+    // Task: Render with ReactDOM
+    ReactDOM.render(element, document.getElementById("root"));
+
+    // Reflection:
+    // React's approach provides a more declarative way of creating UI elements compared to direct DOM manipulation.
+    // It abstracts away the low-level details, making it easier to manage complex UIs and maintain code.
+    // React's virtual DOM efficiently updates only the necessary parts of the actual DOM, enhancing performance.
+    // Overall, React offers better scalability, reusability, and maintainability compared to traditional DOM manipulation.
+  </script>
+</body>
+</html>

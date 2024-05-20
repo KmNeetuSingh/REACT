@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slideshow</title>
+<style>
+    #slideshow-container {
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slide {
+
+        display: none;
+        width: 100%;
+    }
+
+    .slide img {
+        width:100%;
+        height: 90vh;
+    }
+
+    .btn {
+        border-radius: 20px;
+        background-color: blue;
+        color: black; 
+        border: none;
+        cursor: pointer;
+        padding: 10px 30px;
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+    <div id="slideshow-container">
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712315458167-f04b14f13d17?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712974755007-f3b53d9b9110?q=80&w=1308&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713095784750-dba46483999b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://plus.unsplash.com/premium_photo-1664116928414-2ab998603666?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713151516865-9d9d3130de35?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712315458167-f04b14f13d17?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712974755007-f3b53d9b9110?q=80&w=1308&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713095784750-dba46483999b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://plus.unsplash.com/premium_photo-1664116928414-2ab998603666?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713151516865-9d9d3130de35?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712315458167-f04b14f13d17?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712974755007-f3b53d9b9110?q=80&w=1308&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713095784750-dba46483999b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://plus.unsplash.com/premium_photo-1664116928414-2ab998603666?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713151516865-9d9d3130de35?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div><div class="slide">
+            <img src="https://images.unsplash.com/photo-1712315458167-f04b14f13d17?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1712974755007-f3b53d9b9110?q=80&w=1308&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713095784750-dba46483999b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://plus.unsplash.com/premium_photo-1664116928414-2ab998603666?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1713151516865-9d9d3130de35?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+        </div>
+    </div>
+    
+    <button id="startStopButton" class="btn" onclick="toggleSlideshow()">Start Slideshow</button>
+    <button class="btn" onclick="prevSlide()">Previous</button>
+    <button class="btn" onclick="nextSlide()">Next</button>
+
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        let slideshowInterval;
+        let isSlideshowRunning = false;
+
+        function toggleSlideshow() {
+            if (isSlideshowRunning) {
+                clearInterval(slideshowInterval);
+                document.getElementById('startStopButton').textContent = 'Start Slideshow';
+            } else {
+                slideshowInterval = setInterval(nextSlide, 1000); 
+                document.getElementById('startStopButton').textContent = 'Stop Slideshow';
+            }
+            isSlideshowRunning = !isSlideshowRunning;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            slides[currentSlide].style.display = 'block';
+        }
+
+        // Initially show the first slide
+        showSlide(0);
+    </script>
+</body>
+</html>

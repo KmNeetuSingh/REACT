@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#filters {
+    margin-bottom: 20px;
+}
+
+#filters select {
+    margin-right: 10px;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center; 
+    margin-top: 30px;
+}
+
+#pagination button {
+    margin: 0 5px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}

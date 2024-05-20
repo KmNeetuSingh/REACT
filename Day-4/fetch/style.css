@@ -1,0 +1,29 @@
+/* styles.css */
+.todo-item {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; 
+    cursor: pointer;
+}
+
+.selected {
+    background-color: lightgreen; /* Change background color when selected */
+}
+
+.selected .select-button {
+    background-color: green; /* Change button color when selected */
+}

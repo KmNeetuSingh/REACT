@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <style>
+        *{
+            text-align: center;
+            font-weight: 700;
+            font-family:cursive;
+            font-size: 24px;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-column-start: 2;
+            gap: 20px;
+        }
+        .grid>div{
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .grid>div:nth-child(2n+2){
+            background-color: rgb(255,214,239);
+        }
+        .grid>div:nth-child(2n+3){
+    background-color: rgb(250,236,170);
+}
+.grid>div:nth-child(6n+1){
+    background-color: rgb(188,238,242);
+}
+.grid>div:nth-child(1){
+    background-color:white;
+}
+.call{
+grid-column-start: 1;
+grid-column-end: 7;
+text-align: left;
+} 
+h1{
+    font-size: 80px;
+}
+    </style>
+  </head>
+  <body>
+    <h1>✨Weekly schedule✨</h1>
+
+    <div class="grid">
+        <div></div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>08:00</div>
+        <div>Math</div>
+        <div>English</div>
+        <div>Physics</div>
+        <div>Hindi</div>
+        <div>Sanskrit</div>
+        <div>09:00</div>
+        <div>Sanskrit</div>
+        <div>Hindi</div>
+        <div>Physics</div>
+        <div>English</div>
+        <div>Math</div>
+        <div>10:00</div>
+        <div>Physics</div>
+        <div>Math</div>
+        <div>Exam day</div>
+        <div>Hindi</div>
+        <div>Sanskrit</div>
+        <div>11:00</div>
+        <div>Physics</div>
+        <div>Math</div>
+        <div>English</div>
+        <div>Hindi</div>
+        
+        <div>Sanskrit</div>
+        <div>12:00</div>
+        <div>English</div>
+        <div>Math</div>
+        <div>Hindi</div>
+        <div>Physics</div>
+        
+        <div>Sanskrit</div>
+        <div>13:00</div>
+        <div>Hindi</div>
+        <div>Physics</div>
+        <div>English</div>
+        <div>Math</div>
+        
+        <div>Physics</div>
+        <div>14:00</div>
+        <div>Hindi</div>
+        <div>English</div>
+        <div>Sanskrit</div>
+        <div>Physics</div>
+        
+        <div>Math</div>
+        <div>15:00</div>
+        <div>English</div>
+        <div>Physics</div>
+        <div>Sanskrit</div>
+        <div>Exam day</div>
+       
+        <div>Sanskrit</div>
+        <div>16:00</div>
+        <div>Physics</div>
+        <div>Exam Day</div>
+        <div>Pt classes</div>
+        <div>Science</div>
+        <div>Hindi</div>
+        <div class="call">Note:</div>
+    </div>
+  </body>
+</html>

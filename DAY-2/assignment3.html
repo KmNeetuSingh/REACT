@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profiles</title>
+    <style>
+        /* Basic styling for user profiles */
+        .user-profile {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .user-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- React Component -->
+<script type="text/babel">
+    // UserProfile component
+    const UserProfile = ({ user }) => (
+        <div className="user-profile">
+            <img src={user.avatar} alt="Profile" />
+            <span>{user.name}</span>
+        </div>
+    );
+
+    // App component
+    class App extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                users: [], // Initialize users with an empty array
+                searchQuery: "", // For storing search input value
+            };
+        }
+
+        // Function to handle search input change
+        handleSearchChange = (e) => {
+            this.setState({ searchQuery: e.target.value });
+        };
+
+        componentDidMount() {
+            // Set sample user data when the component mounts
+            this.setState({ users: userData });
+        }
+
+        render() {
+            // Filter users based on search query
+            const filteredUsers = this.state.users.filter((user) =>
+                user.name.toLowerCase().includes(this.state.searchQuery.toLowerCase())
+            );
+
+            // Rendering user profiles
+            const userProfiles = filteredUsers.map((user) => (
+                <UserProfile key={user.id} user={user} />
+            ));
+
+            return (
+                <div>
+                    {/* Search input field */}
+                    <input
+                        type="text"
+                        placeholder="Search by name..."
+                        value={this.state.searchQuery}
+                        onChange={this.handleSearchChange}
+                    />
+                    {/* Rendered user profiles */}
+                    {userProfiles}
+                </div>
+            );
+        }
+    }
+
+    // Sample data for user profiles
+    const userData = [
+        { id: 1, name: "John Doe", avatar: "https://randomuser.me/api/portraits/men/1.jpg" },
+        { id: 2, name: "Jane Smith", avatar: "https://randomuser.me/api/portraits/women/2.jpg" },
+        { id: 3, name: "Alice Johnson", avatar: "https://randomuser.me/api/portraits/women/3.jpg" },
+        { id: 4, name: "Bob Williams", avatar: "https://randomuser.me/api/portraits/men/4.jpg" },
+    ];
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+</script>
+</body>
+</html>
