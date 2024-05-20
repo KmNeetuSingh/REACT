@@ -1,23 +1,24 @@
-### React Assignment: JSX in React
-
 ### Step-by-Step Guide
 
 ### Step 1 :
 
 Download the zip file
 
-### **Step 2** :
+### Step 2 :
 
 Unzip the zip file
 
-### **Step 3: Navigate to Your Project**
+### Step 3:
+
+Navigate to Your Project
 
 ```bash
 cd <name-of-project>
-
 ```
 
-**Step 4: Install Dependencies**
+### Step 4:
+
+Install Dependencies
 
 ```bash
 npm install
@@ -26,7 +27,9 @@ npm install
 
 This command installs all the necessary dependencies for your project.
 
-**Step 5: Start the Development Server**
+### Step 5:
+
+Start the Development Server\*\*
 
 ```bash
 npm run dev
@@ -51,16 +54,16 @@ After creating your project, you'll see several files and folders:
 
 ### Assignment Problems
 
-**Note : Please note that axios library is also installed within the template and need not be installed again**
+**Note : Please note that axios library is also installed within the template (gets installed when you do `npm install` ) and need not be installed again**
 
 ### Problem 1: Fetching and Displaying Data with Axios
 
-Here is an example using `Users` and `User` components to fetch and display user data from an API using Axios.
+Here is an example using `Users` and `User` components to fetch and display user data from an API using Axios as soon as component mounts
 
 ```jsx
 // src/components/Users.jsx
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import User from "./User";
 import LoadingIndicator from "./LoadingIndicator";
@@ -87,10 +90,11 @@ function Users() {
     }
   }
 
+  useEffect(() => {
+    fetchAndUpdateData();
+  }, []);
+
   if (loading) {
-
-
-
     return <LoadingIndicator />;
   }
 
@@ -101,9 +105,6 @@ function Users() {
   return (
     <div>
       <h1>List of users</h1>
-      <button onClick={fetchAndUpdateData}>
-        Click to display list of users
-      </button>
       {users?.map((user) => (
         <User {...user} key={user.id} />
       ))}
@@ -132,12 +133,12 @@ function User({ avatar, email, first_name, last_name }) {
 export default User;
 ```
 
-Now, you have to complete the code in the `Posts` and `Post` components. The `Posts` component should fetch a list of posts from an API using Axios and display them using the `Post` component. Complete the Missing Code
+Now, you have to complete the code in the `Posts` and `Post` components. The `Posts` component should fetch a list of posts from an API using Axios ( Perform side effect ) as soon as component mounts and display them using the `Post` component. Complete the Missing Code
 
 ```jsx
 // src/components/Posts.jsx
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Post from "./Post";
 import LoadingIndicator from "./LoadingIndicator";
@@ -149,12 +150,11 @@ function Posts() {
   const [error, setError] = useState(false);
 
   async function fetchAndUpdateData() {
+    {
+      /*Complete the missing code*/
+    }
     try {
       {
-
-
-
-      
         /*Complete the missing code*/
       }
     } catch (error) {
@@ -163,6 +163,10 @@ function Posts() {
       }
     }
   }
+
+  useEffect(() => {
+    fetchAndUpdateData();
+  }, []);
 
   if (loading) {
     return <LoadingIndicator />;
@@ -175,9 +179,7 @@ function Posts() {
   return (
     <div>
       <h1>List of Posts</h1>
-      <button onClick={fetchAndUpdateData}>
-        Click to display list of posts
-      </button>
+
       {/*Complete the missing code*/}
     </div>
   );
