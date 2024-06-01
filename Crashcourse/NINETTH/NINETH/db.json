@@ -1,0 +1,60 @@
+{
+  "tickets": [
+    {
+      "title": "Conduct a user survey sdfsf",
+      "Description": "Gather feedback on new features",
+      "Assignee": "ankur",
+      "status": "pending",
+      "priority": 4,
+      "id": "6"
+    },
+    {
+      "title": "Set up a database",
+      "Description": "Use MySQL for the backend",
+      "Assignee": "Manu",
+      "status": "pending",
+      "priority": 5,
+      "id": "7"
+    },
+    {
+      "id": "8",
+      "title": "Test the new software release",
+      "Description": "Ensure there are no critical bugs",
+      "Assignee": "Ankur",
+      "status": "progress",
+      "priority": "1"
+    },
+    {
+      "id": "10",
+      "title": "Update the company website",
+      "Description": "Add the new team members",
+      "Assignee": "Rajiv",
+      "status": "completed",
+      "priority": "3"
+    },
+    {
+      "title": "Create a video",
+      "Description": "An animated kids video",
+      "Assignee": "ayush",
+      "status": "progress",
+      "priority": "3",
+      "id": "b97xnq2"
+    },
+    {
+      "title": "Add a logo",
+      "Description": "logo of a company",
+      "Assignee": "manu",
+      "status": "completed",
+      "priority": 1,
+      "id": "QC_V_3a"
+    },
+    {
+      "title": "Build my car",
+      "Description": "An electric car",
+      "Assignee": "ayush",
+      "status": "completed",
+      "priority": "3",
+      "id": "LDYVdFq"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "name": "a1p2",
+  "name": "react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,9 +13,11 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "framer-motion": "^11.2.5",
+    "axios": "^1.7.2",
+    "framer-motion": "^11.2.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
