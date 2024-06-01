@@ -38,7 +38,7 @@ const Login = () => {
       if (res.data.token) {
         setToken(res.data.token);
         setIsAuth(true);
-        navigate("/tickets");
+        navigate("/home");
       } else {
         console.log("No token in response");
         toast({
