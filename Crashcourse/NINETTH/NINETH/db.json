@@ -3,7 +3,7 @@
     {
       "title": "Conduct a user survey sdfsf",
       "Description": "Gather feedback on new features",
-      "Assignee": "ankur",
+      "Assignee": "Neetu",
       "status": "pending",
       "priority": 4,
       "id": "6"
@@ -11,7 +11,7 @@
     {
       "title": "Set up a database",
       "Description": "Use MySQL for the backend",
-      "Assignee": "Manu",
+      "Assignee": "addii",
       "status": "pending",
       "priority": 5,
       "id": "7"
@@ -35,7 +35,7 @@
     {
       "title": "Create a video",
       "Description": "An animated kids video",
-      "Assignee": "ayush",
+      "Assignee": "ADDII",
       "status": "progress",
       "priority": "3",
       "id": "b97xnq2"

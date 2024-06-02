@@ -28,12 +28,12 @@ const Login = () => {
     }
 
     try {
-      console.log("Logging in with", email, password); // Debugging
+      console.log("Logging in with", email, password);
       let res = await axios.post("https://reqres.in/api/login", {
         email,
         password,
       });
-      console.log("Response:", res); // Debugging
+      console.log("Response:", res); 
 
       if (res.data.token) {
         setToken(res.data.token);
