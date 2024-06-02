@@ -22,6 +22,7 @@ const LoginPage = () => {
 
       const token = response.data.token;
       login(token, email);
+
        window.location.href = '/home'; 
     } catch (error) {
       toast({
